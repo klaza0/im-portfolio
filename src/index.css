@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Segoe UI Variable", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --color-win-bg-dark: #0a0a0f;
+  --color-win-bg-light: #f3f3f3;
+  --color-win-surface-dark: rgba(32, 32, 32, 0.85);
+  --color-win-surface-light: rgba(255, 255, 255, 0.75);
+  --color-win-border-dark: rgba(255, 255, 255, 0.08);
+  --color-win-border-light: rgba(0, 0, 0, 0.08);
+  --color-win-text-dark: #ffffff;
+  --color-win-text-light: #1a1a1a;
+  --color-win-muted-dark: rgba(255, 255, 255, 0.6);
+  --color-win-muted-light: rgba(0, 0, 0, 0.55);
+}
+
+:root {
+  --accent: #0078d4;
+  --accent-hover: #106ebe;
+  --accent-subtle: rgba(0, 120, 212, 0.15);
+  --wallpaper: url('/wallpaper-dark.jpg');
+  --surface: var(--color-win-surface-dark);
+  --surface-solid: #202020;
+  --border: var(--color-win-border-dark);
+  --text: var(--color-win-text-dark);
+  --text-muted: var(--color-win-muted-dark);
+  --taskbar-bg: rgba(28, 28, 28, 0.75);
+  --window-bg: rgba(32, 32, 32, 0.92);
+  --titlebar-bg: rgba(45, 45, 45, 0.6);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --blur-strength: 24px;
+  --transition-speed: 0.2s;
+}
+
+[data-theme="light"] {
+  --wallpaper: url('/wallpaper-light.jpg');
+  --surface: var(--color-win-surface-light);
+  --surface-solid: #ffffff;
+  --border: var(--color-win-border-light);
+  --text: var(--color-win-text-light);
+  --text-muted: var(--color-win-muted-light);
+  --taskbar-bg: rgba(243, 243, 243, 0.75);
+  --window-bg: rgba(255, 255, 255, 0.92);
+  --titlebar-bg: rgba(245, 245, 245, 0.8);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+[data-accent="purple"] { --accent: #881798; --accent-hover: #771689; --accent-subtle: rgba(136, 23, 152, 0.15); }
+[data-accent="green"] { --accent: #107c10; --accent-hover: #0e6b0e; --accent-subtle: rgba(16, 124, 16, 0.15); }
+[data-accent="orange"] { --accent: #d83b01; --accent-hover: #c43601; --accent-subtle: rgba(216, 59, 1, 0.15); }
+[data-accent="pink"] { --accent: #e3008c; --accent-hover: #cc007d; --accent-subtle: rgba(227, 0, 140, 0.15); }
+[data-accent="red"] { --accent: #e81123; --accent-hover: #d01020; --accent-subtle: rgba(232, 17, 35, 0.15); }
+
+[data-performance="true"] {
+  --blur-strength: 0px;
+  --transition-speed: 0s;
+}
+
+[data-reduced-motion="true"] * {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+[data-high-contrast="true"] {
+  --border: rgba(255, 255, 255, 0.35);
+  --text-muted: rgba(255, 255, 255, 0.92);
+  --window-bg: rgba(12, 12, 12, 0.98);
+  --taskbar-bg: rgba(12, 12, 12, 0.95);
+}
+
+[data-theme="light"][data-high-contrast="true"] {
+  --border: rgba(0, 0, 0, 0.35);
+  --text-muted: rgba(0, 0, 0, 0.85);
+  --window-bg: rgba(255, 255, 255, 0.98);
+  --taskbar-bg: rgba(255, 255, 255, 0.95);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: var(--font-sans);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  cursor: default;
+}
+
+button, a, [role="button"], input[type="range"], .cursor-pointer {
+  cursor: pointer;
+}
+
+.window-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.6);
+}
+
+.glass {
+  background: var(--surface);
+  backdrop-filter: blur(var(--blur-strength));
+  -webkit-backdrop-filter: blur(var(--blur-strength));
+  border: 1px solid var(--border);
+}
+
+.accent-bg { background-color: var(--accent); }
+.accent-text { color: var(--accent); }
+.accent-border { border-color: var(--accent); }
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

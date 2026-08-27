@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none">
+  <rect width="640" height="360" fill="#1a1a2e"/>
+  <rect x="40" y="40" width="560" height="280" rx="8" fill="#252540" stroke="#107c10" stroke-width="2"/>
+  <text x="320" y="190" text-anchor="middle" fill="#107c10" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Vendly POS</text>
+  <text x="320" y="220" text-anchor="middle" fill="#888" font-family="Segoe UI, sans-serif" font-size="14">Project Preview</text>
+</svg>
