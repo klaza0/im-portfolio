@@ -1,32 +1,71 @@
-# React + TypeScript + Vite
+# IM/OS | IMDEV Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A Windows-inspired, interactive portfolio by **Ibrahim Montaser**, Front-End & Mobile Developer and creator of **IMDEV**. Explore projects, skills, experience, and contact details through a desktop-style interface instead of a traditional scrolling page.
 
-Currently, two official plugins are available:
+**[Open the live portfolio](https://im-portfolio-one.vercel.app/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Preview
 
-## React Compiler
+### Desktop
+![IM/OS desktop with application icons and a centered taskbar](docs/screenshots/desktop.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Project explorer
+![Project explorer with search, technology filters, and project cards](docs/screenshots/projects.png)
 
-## Expanding the Oxlint configuration
+## Experience
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- A desktop shell with application windows, a taskbar, and a Start Menu.
+- Dedicated apps for projects, skills, experience, resume, and contact details.
+- A searchable project explorer with technology filters.
+- Animated UI transitions powered by Framer Motion.
+- A mobile launcher for smaller screens.
+- Keyboard shortcuts for search and window controls.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+Double-click a desktop icon or use the taskbar to open an app. Try **Ctrl + K** to open search, or **Esc** to dismiss menus and search. Some operating systems may intercept window-management shortcuts before they reach the browser.
+
+## Built with
+
+| Area | Technology |
+| --- | --- |
+| UI | React + TypeScript |
+| Build tooling | Vite |
+| Styling | Tailwind CSS |
+| Animation | Framer Motion |
+| Icons | Lucide React |
+| Linting | Oxlint |
+
+## Run locally
+
+Use a Node.js release compatible with the Vite version in `package.json`.
+
+```bash
+npm ci
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Open the local URL printed by Vite.
+
+```bash
+npm run build    # Type-check and create the production build
+npm run preview  # Preview the production build locally
+npm run lint     # Run Oxlint
+```
+
+## Project structure
+
+```text
+src/
+  components/   Desktop, windows, taskbar, menus, and app UI
+  context/      Desktop state and shared context
+  data/         Profile and project content
+  hooks/        Keyboard shortcuts and reusable behavior
+public/         Images, icons, project media, and resume assets
+```
+
+## Personalization
+
+Profile information lives in `src/data/profile.ts`, and project entries live in `src/data/projects.ts`. Images and downloadable assets are served from `public/`.
+
+---
+
+Built by **Ibrahim Montaser / IMDEV**.
