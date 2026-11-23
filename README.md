@@ -7,10 +7,10 @@ A Windows-inspired, interactive portfolio by **Ibrahim Montaser**, Front-End & M
 ## Preview
 
 ### Desktop
-![IM/OS desktop with application icons and a centered taskbar](docs/screenshots/desktop.png)
+![IM/OS desktop with application icons and a centered taskbar](https://github.com/user-attachments/assets/948c99ea-b830-4a3e-ab87-bedd76d64b8f)
 
 ### Project explorer
-![Project explorer with search, technology filters, and project cards](docs/screenshots/projects.png)
+![Project explorer with search, technology filters, and project cards](https://github.com/user-attachments/assets/0ea968e7-913d-4a6e-9703-3f1e74381381)
 
 ## Experience
 
